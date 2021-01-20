@@ -13,8 +13,7 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 RUN go build -o main .
-WORKDIR /app
-CMD ["./main"]
+CMD  [".","/app/main"]
 
 WIth gobuild and amazonlinux:
 ============================
@@ -25,6 +24,6 @@ FROM golang:latest
 WORKDIR /golang-application
 RUN mkdir /app
 ADD . /app
-WORKDIR /app
 RUN go build -o main .
-CMD ["/app/main"]
+CMD  [".","/app/main"]
+
